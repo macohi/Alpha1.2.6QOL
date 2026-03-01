@@ -64,6 +64,9 @@ public class CraftingManager {
 		
 		this.addRecipe(new ItemStack(Block.fadeTorchActive, 1), new Object[]{"X", "X", Character.valueOf('X'), Item.stick});
 		
+		this.addRecipe(new ItemStack(Item.stick, 2), new Object[]{"X", Character.valueOf('X'), Block.fadeTorchActive});
+		this.addRecipe(new ItemStack(Item.stick, 2), new Object[]{"X", Character.valueOf('X'), Block.fadeTorchIdle});
+		
 		Collections.sort(this.recipes, new RecipeSorter(this));
 		System.out.println(this.recipes.size() + " recipes");
 	}
