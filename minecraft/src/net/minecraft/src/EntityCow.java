@@ -36,10 +36,10 @@ public class EntityCow extends EntityAnimals {
 	}
 
 	protected int getDropItemId() {
-		Integer nextInt = this.worldObj.rand.nextInt();
+		Integer nextInt = this.worldObj.rand.nextInt() % 256;
 
 		System.out.println("Cow nextInt: " + nextInt.toString());
-		if (nextInt % 10 == 0)
+		if (nextInt == 0)
 			return Item.porkRaw.shiftedIndex;
 
 		return Item.leather.shiftedIndex;
