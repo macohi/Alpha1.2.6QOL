@@ -24,6 +24,8 @@ public class BlockFadeTorch extends BlockTorch {
 			// +8s(?)
 			tickInteger += 480 * (tickRate() / 20);
 			var5.inventory.consumeInventoryItem(var5.inventory.getCurrentItem().itemID);
+
+			randomDisplayTick(var1, var2, var3, var4, null);
 		}
 
 		return var5.inventory.getCurrentItem().itemID == Item.stick.shiftedIndex;
