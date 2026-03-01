@@ -16,14 +16,12 @@ public class BlockFadeTorch extends BlockTorch {
 		tickInteger = 1200 * (tickRate() / 20);
 	}
 
-	public boolean blockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5) {
+	public void onBlockClicked(World var1, int var2, int var3, int var4, EntityPlayer var5) {
 		if (var5.inventory.currentItem == Block.planks.blockID) {
 			// +5s(?)
 			tickInteger += 100 * (tickRate() / 20);
 			var5.inventory.consumeInventoryItem(var5.inventory.currentItem);
 		}
-
-		return var5.inventory.currentItem == Block.planks.blockID;
 	}
 
 	private void burnoutProcess() {
