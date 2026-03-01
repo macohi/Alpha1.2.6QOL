@@ -13,13 +13,13 @@ public class BlockFadeTorch extends BlockTorch {
 		this.torchActive = torchActive;
 
 		// 60s(?)
-		tickInteger = 1200 * (tickRate() / 20);
+		if (torchActive)
+			tickInteger = 1200 * (tickRate() / 20);
+		else
+			tickInteger = 0;
 	}
 
 	public boolean blockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5) {
-		System.out.println("curItem: " + var5.inventory.getCurrentItem().itemID);
-		System.out.println("stickItem: " + Item.stick.shiftedIndex);
-
 		if (var5.inventory.getCurrentItem().itemID == Item.stick.shiftedIndex) {
 			// +5s(?)
 			tickInteger += 100 * (tickRate() / 20);
@@ -32,7 +32,8 @@ public class BlockFadeTorch extends BlockTorch {
 	private void burnoutProcess() {
 		if (tickInteger > 0)
 			tickInteger--;
-		else
+
+		if (tickInteger < 0)
 			tickInteger = 0;
 	}
 
