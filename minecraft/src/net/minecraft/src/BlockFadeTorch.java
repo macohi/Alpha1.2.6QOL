@@ -17,16 +17,16 @@ public class BlockFadeTorch extends BlockTorch {
 	}
 
 	public boolean blockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5) {
-		System.out.println("curItem: " + var5.inventory.currentItem);
+		System.out.println("curItem: " + var5.inventory.getCurrentItem().itemID);
 		System.out.println("stickItem: " + Item.stick.shiftedIndex);
 
-		if (var5.inventory.currentItem == Item.stick.shiftedIndex) {
+		if (var5.inventory.getCurrentItem().itemID == Item.stick.shiftedIndex) {
 			// +5s(?)
 			tickInteger += 100 * (tickRate() / 20);
-			var5.inventory.consumeInventoryItem(var5.inventory.currentItem);
+			var5.inventory.consumeInventoryItem(var5.inventory.getCurrentItem().itemID);
 		}
 
-		return var5.inventory.currentItem == Item.stick.shiftedIndex;
+		return var5.inventory.getCurrentItem().itemID == Item.stick.shiftedIndex;
 	}
 
 	private void burnoutProcess() {
