@@ -36,7 +36,7 @@ public class EntityCow extends EntityAnimals {
 	}
 
 	protected int getDropItemId() {
-		Integer nextInt = this.worldObj.rand.nextInt() % 256;
+		Integer nextInt = this.worldObj.rand.nextInt() % 256 % 128 % 64 % 32 % 16;
 
 		System.out.println("Cow nextInt: " + nextInt.toString());
 		if (nextInt == 0)
