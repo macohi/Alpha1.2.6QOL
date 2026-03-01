@@ -39,7 +39,7 @@ public class EntityCow extends EntityAnimals {
 		Integer nextInt = Math.abs(this.worldObj.rand.nextInt() % 256 % 128 % 64 % 32 % 16);
 
 		System.out.println("Cow nextInt: " + nextInt.toString());
-		if (nextInt == 0)
+		if (nextInt >= 0 && nextInt <= 4)
 			return Item.porkRaw.shiftedIndex;
 
 		return Item.leather.shiftedIndex;
