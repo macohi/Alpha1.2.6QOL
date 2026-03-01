@@ -1,6 +1,8 @@
 # m1.3 - 3/1/2026
 
-- Added "Fade Torch" Block
+- Added "Fade Torch" Block : A "Prototype torch" intended for early on when you are without coal, lasts only for a little bit and then it's gone
+	- Can be fueled to last longer via sticks
+	- Crafted via 2 sticks
 
 # m1.2 - 3/1/2026
 
