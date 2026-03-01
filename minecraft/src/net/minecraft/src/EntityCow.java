@@ -4,17 +4,9 @@ import java.util.Random;
 
 public class EntityCow extends EntityAnimals {
 	public boolean unusedBoolean = false;
-	public Long randomSeed = 10L;
 
 	public EntityCow(World var1) {
 		super(var1);
-
-		this.randomSeed = var1.randomSeed;
-
-		this.randomSeed *= var1.randomSeed;
-		
-		this.randomSeed *= this.randomSeed;
-
 		this.texture = "/mob/cow.png";
 		this.setSize(0.9F, 1.3F);
 	}
@@ -44,16 +36,6 @@ public class EntityCow extends EntityAnimals {
 	}
 
 	protected int getDropItemId() {
-		Double randomValue = new Random(this.randomSeed).nextDouble() % 10;
-		this.randomSeed *= randomValue.longValue();
-
-		System.out.println("- - -");
-		System.out.println("Cow randomValue: " + randomValue.toString());
-		System.out.println("Cow randomSeed: " + this.randomSeed.toString());
-
-		if (randomValue == 1)
-			return Item.porkRaw.shiftedIndex;
-
 		return Item.leather.shiftedIndex;
 	}
 
