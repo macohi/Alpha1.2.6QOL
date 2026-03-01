@@ -5,15 +5,15 @@ import java.util.Random;
 public class BlockFadeTorch extends BlockTorch {
 	private boolean torchActive = false;
 
-	public Integer tickInteger;
-	public Integer tickIntegerStartVal;
+	private Integer tickInteger;
+	private Integer tickIntegerStartVal;
 
 	protected BlockFadeTorch(int var1, int var2, boolean torchActive) {
 		super(var1, var2);
 
 		this.torchActive = torchActive;
 
-		tickIntegerStartVal = 1000 / tickRate();
+		tickIntegerStartVal = 30;
 
 		if (!torchActive)
 			tickInteger = 0;
@@ -43,7 +43,7 @@ public class BlockFadeTorch extends BlockTorch {
 
 		if (torchActive)
 			if (var5.inventory.getCurrentItem().itemID == Item.stick.shiftedIndex) {
-				tickInteger += 100 / tickRate();
+				tickInteger += 3;
 				var5.inventory.consumeInventoryItem(var5.inventory.getCurrentItem().itemID);
 
 				randomDisplayTick(var1, var2, var3, var4, null, true);
@@ -57,7 +57,7 @@ public class BlockFadeTorch extends BlockTorch {
 	private void burnoutProcess() {
 		if (tickInteger > 0)
 		{
-			tickInteger--;
+			tickInteger -= tickRate() * tickRate();
 			System.out.println(tickInteger);
 		}
 
