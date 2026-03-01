@@ -20,6 +20,7 @@ public class BlockFadeTorch extends BlockTorch {
 		if (var5.inventory.currentItem == Block.planks.blockID) {
 			// +5s(?)
 			tickInteger += 100 * (tickRate() / 20);
+			var5.inventory.consumeInventoryItem(var5.inventory.currentItem);
 		}
 
 		return var5.inventory.currentItem == Block.planks.blockID;
