@@ -60,13 +60,6 @@ public class BlockFadeTorch extends BlockTorch {
 
 		if (tickInteger < 0)
 			tickInteger = 0;
-
-		if (torchActive) {
-			this.blockIndexInTexture = Block.fadeTorchActive.blockIndexInTexture;
-
-			if (tickInteger > tickIntegerStartVal / 2)
-				this.blockIndexInTexture = Block.torchWood.blockIndexInTexture;
-		}
 	}
 
 	public int tickRate() {
