@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import java.util.Random;
+
 public class EntityCow extends EntityAnimals {
 	public boolean unusedBoolean = false;
 
@@ -34,13 +36,20 @@ public class EntityCow extends EntityAnimals {
 	}
 
 	protected int getDropItemId() {
+		Double randomValue = new Random(this.worldObj.randomSeed).nextDouble() % 10;
+
+		System.out.println("Cow randomValue: " + randomValue.toString());
+		if (randomValue == 1)
+			return Item.porkRaw.shiftedIndex;
+
 		return Item.leather.shiftedIndex;
 	}
 
 	public boolean interact(EntityPlayer var1) {
 		ItemStack var2 = var1.inventory.getCurrentItem();
-		if(var2 != null && var2.itemID == Item.bucketEmpty.shiftedIndex) {
-			var1.inventory.setInventorySlotContents(var1.inventory.currentItem, new ItemStack(Item.bucketMilk));
+		if (var2 != null && var2.itemID == Item.bucketEmpty.shiftedIndex) {
+			var1.inventory.setInventorySlotContents(var1.inventory.currentItem,
+					new ItemStack(Item.bucketMilk));
 			return true;
 		} else {
 			return false;
