@@ -20,15 +20,17 @@ public class BlockFadeTorch extends BlockTorch {
 	}
 
 	public boolean blockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5) {
-		if (var5.inventory.getCurrentItem() == null) return false;
+		if (var5.inventory.getCurrentItem() == null)
+			return false;
 
-		if (var5.inventory.getCurrentItem().itemID == Item.stick.shiftedIndex) {
-			// +8s(?)
-			tickInteger += 480 * (tickRate() / 20);
-			var5.inventory.consumeInventoryItem(var5.inventory.getCurrentItem().itemID);
+		if (torchActive)
+			if (var5.inventory.getCurrentItem().itemID == Item.stick.shiftedIndex) {
+				// +8s(?)
+				tickInteger += 480 * (tickRate() / 20);
+				var5.inventory.consumeInventoryItem(var5.inventory.getCurrentItem().itemID);
 
-			randomDisplayTick(var1, var2, var3, var4, null);
-		}
+				randomDisplayTick(var1, var2, var3, var4, null, true);
+			}
 
 		return var5.inventory.getCurrentItem().itemID == Item.stick.shiftedIndex;
 	}
@@ -67,8 +69,8 @@ public class BlockFadeTorch extends BlockTorch {
 		return Block.fadeTorchIdle.blockID;
 	}
 
-	public void randomDisplayTick(World var1, int var2, int var3, int var4, Random var5) {
-		if (torchActive)
+	public void randomDisplayTick(World var1, int var2, int var3, int var4, Random var5, boolean force) {
+		if (torchActive || force)
 			super.randomDisplayTick(var1, var2, var3, var4, var5);
 	}
 }
