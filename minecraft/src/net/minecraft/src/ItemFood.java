@@ -6,7 +6,7 @@ public class ItemFood extends Item {
 	public ItemFood(int var1, int var2) {
 		super(var1);
 		this.healAmount = var2;
-		this.maxStackSize = 1;
+		this.maxStackSize = 8;
 	}
 
 	public ItemStack onItemRightClick(ItemStack var1, World var2, EntityPlayer var3) {
