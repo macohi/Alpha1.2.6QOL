@@ -180,7 +180,7 @@ public abstract class Minecraft implements Runnable {
 			Display.setDisplayMode(new DisplayMode(this.displayWidth, this.displayHeight));
 		}
 
-		Display.setTitle("Minecraft Alpha v1.2.6-macohi");
+		Display.setTitle("Minecraft Alpha 1.2.6-macohi");
 
 		try {
 			Display.create();

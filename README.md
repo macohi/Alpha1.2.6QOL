@@ -2,4 +2,4 @@ Just some QOL stuff I add to 1.2.6 cause I can lol
 
 # Changes
 
-- Window Title is now "Minecraft Alpha v1.2.6-machoi"
+- The version texts and strings are now "Minecraft Alpha 1.2.6-machoi"
