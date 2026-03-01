@@ -1,5 +1,7 @@
 # m1.3 - 3/1/2026
 
+- Added "Charcoal" : Weaker coal : provides less
+- Added "Charred Stick" : A burned stick from a Fade Torch
 - Fixed crafting table not being mineable faster by axes
 - Added "Fade Torch" Block : A "Prototype torch" intended for early on when you are without coal, lasts only for a little bit and then it's gone
 	- Can be fueled to last longer via sticks only when already active
