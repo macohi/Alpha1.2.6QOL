@@ -1,5 +1,6 @@
 # m1.3 - 3/1/2026
 
+- Fixed crafting table not being mineable faster by axes
 - Added "Fade Torch" Block : A "Prototype torch" intended for early on when you are without coal, lasts only for a little bit and then it's gone
 	- Can be fueled to last longer via sticks only when already active
 	- Crafted via 2 sticks
