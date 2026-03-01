@@ -10,5 +10,6 @@ minecraft/md5/
 minecraft/reobf/
 minecraft/output/
 minecraft/source/
+minecraft/src_original/
 minecraft_server/
 patches/
