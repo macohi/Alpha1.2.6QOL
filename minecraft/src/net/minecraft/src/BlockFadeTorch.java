@@ -22,6 +22,20 @@ public class BlockFadeTorch extends BlockTorch {
 
 		System.out.println("tickInteger: " + tickInteger);
 	}
+	
+	public void writeEntityToNBT(NBTTagCompound var1) {
+		var1.setBoolean("torchActive", torchActive);
+		var1.setInteger("tickInteger", tickInteger);
+	}
+
+	public void readEntityFromNBT(NBTTagCompound var1) {
+		this.torchActive = var1.getBoolean("torchActive");
+		this.tickInteger = var1.getInteger("tickInteger");
+		if(!var1.hasKey("tickInteger")) {
+			this.tickInteger = tickIntegerStartVal;
+		}
+	}
+
 
 	public boolean blockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5) {
 		if (var5.inventory.getCurrentItem() == null)
