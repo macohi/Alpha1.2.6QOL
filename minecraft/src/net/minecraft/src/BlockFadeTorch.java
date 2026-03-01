@@ -13,7 +13,7 @@ public class BlockFadeTorch extends BlockTorch {
 
 		this.torchActive = torchActive;
 
-		tickIntegerStartVal = 1000;
+		tickIntegerStartVal = 1000 * (tickRate() / 10);
 
 		if (!torchActive)
 			tickInteger = 0;
@@ -43,7 +43,7 @@ public class BlockFadeTorch extends BlockTorch {
 
 		if (torchActive)
 			if (var5.inventory.getCurrentItem().itemID == Item.stick.shiftedIndex) {
-				tickInteger += 100;
+				tickInteger += 100 * (tickRate() / 10);
 				var5.inventory.consumeInventoryItem(var5.inventory.getCurrentItem().itemID);
 
 				randomDisplayTick(var1, var2, var3, var4, null, true);
@@ -56,7 +56,10 @@ public class BlockFadeTorch extends BlockTorch {
 
 	private void burnoutProcess() {
 		if (tickInteger > 0)
+		{
 			tickInteger--;
+			System.out.println(tickInteger);
+		}
 
 		if (tickInteger < 0)
 			tickInteger = 0;
