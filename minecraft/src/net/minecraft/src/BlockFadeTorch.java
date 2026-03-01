@@ -20,6 +20,8 @@ public class BlockFadeTorch extends BlockTorch {
 	}
 
 	public boolean blockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5) {
+		if (var5.inventory.getCurrentItem() == null) return false;
+
 		if (var5.inventory.getCurrentItem().itemID == Item.stick.shiftedIndex) {
 			// +8s(?)
 			tickInteger += 480 * (tickRate() / 20);
