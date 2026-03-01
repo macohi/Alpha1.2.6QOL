@@ -12,14 +12,13 @@ public class BlockFadeTorch extends BlockTorch {
 
 		this.torchActive = torchActive;
 
-		// 60s
+		// 60s(?)
 		tickInteger = 1200 * (tickRate() / 20);
 	}
 
 	public boolean blockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5) {
-		if (var5.inventory.currentItem == Block.planks.blockID)
-		{
-			// +5s
+		if (var5.inventory.currentItem == Block.planks.blockID) {
+			// +5s(?)
 			tickInteger += 100 * (tickRate() / 20);
 		}
 
@@ -27,7 +26,10 @@ public class BlockFadeTorch extends BlockTorch {
 	}
 
 	private void burnoutProcess() {
-		tickInteger--;
+		if (tickInteger > 0)
+			tickInteger--;
+		else
+			tickInteger = 0;
 	}
 
 	public int tickRate() {
@@ -37,8 +39,13 @@ public class BlockFadeTorch extends BlockTorch {
 	public void updateTick(World var1, int var2, int var3, int var4, Random var5) {
 		this.burnoutProcess();
 
-		if (tickInteger < 1) {
+		if (torchActive && tickInteger < 1) {
 			var1.setBlockAndMetadataWithNotify(var2, var3, var4, Block.fadeTorchIdle.blockID,
+					var1.getBlockMetadata(var2, var3, var4));
+		}
+
+		if (!torchActive && tickInteger > 0) {
+			var1.setBlockAndMetadataWithNotify(var2, var3, var4, Block.fadeTorchActive.blockID,
 					var1.getBlockMetadata(var2, var3, var4));
 		}
 
