@@ -61,6 +61,9 @@ public class CraftingManager {
 		this.addRecipe(new ItemStack(Block.button, 1), new Object[]{"#", "#", Character.valueOf('#'), Block.stone});
 		this.addRecipe(new ItemStack(Block.pressurePlateStone, 1), new Object[]{"###", Character.valueOf('#'), Block.stone});
 		this.addRecipe(new ItemStack(Block.pressurePlatePlanks, 1), new Object[]{"###", Character.valueOf('#'), Block.planks});
+		
+		this.addRecipe(new ItemStack(Block.fadeTorchActive, 1), new Object[]{"X", "X", Character.valueOf('X'), Item.stick});
+		
 		Collections.sort(this.recipes, new RecipeSorter(this));
 		System.out.println(this.recipes.size() + " recipes");
 	}

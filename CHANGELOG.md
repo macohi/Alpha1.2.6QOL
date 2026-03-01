@@ -1,3 +1,7 @@
+# m1.3 - 3/1/2026
+
+- Added "Fade Torch" Block
+
 # m1.2 - 3/1/2026
 
 - Cows have a small chance of dropping food instead of leather
