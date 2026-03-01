@@ -9,6 +9,8 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
+import macohi.MacohiVersion;
+
 public class GuiIngame extends Gui {
 	private static RenderItem itemRenderer = new RenderItem();
 	private List chatMessageList = new ArrayList();
@@ -150,7 +152,7 @@ public class GuiIngame extends Gui {
 		GL11.glDisable(GL12.GL_RESCALE_NORMAL);
 		String var23;
 		if(Keyboard.isKeyDown(Keyboard.KEY_F3)) {
-			var8.drawStringWithShadow("Minecraft Alpha 1.2.6-macohi (" + this.mc.field_6292_I + ")", 2, 2, 16777215);
+			var8.drawStringWithShadow(MacohiVersion.version + " (" + this.mc.field_6292_I + ")", 2, 2, 16777215);
 			var8.drawStringWithShadow(this.mc.func_6241_m(), 2, 12, 16777215);
 			var8.drawStringWithShadow(this.mc.func_6262_n(), 2, 22, 16777215);
 			var8.drawStringWithShadow(this.mc.func_6245_o(), 2, 32, 16777215);
@@ -166,7 +168,7 @@ public class GuiIngame extends Gui {
 			this.drawString(var8, "y: " + this.mc.thePlayer.posY, 2, 72, 14737632);
 			this.drawString(var8, "z: " + this.mc.thePlayer.posZ, 2, 80, 14737632);
 		} else {
-			var8.drawStringWithShadow("Minecraft Alpha 1.2.6-macohi", 2, 2, 16777215);
+			var8.drawStringWithShadow(MacohiVersion.version, 2, 2, 16777215);
 		}
 
 		if(this.field_9419_j > 0) {

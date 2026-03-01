@@ -9,6 +9,8 @@ import java.util.Random;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.glu.GLU;
 
+import macohi.MacohiVersion;
+
 public class GuiMainMenu extends GuiScreen {
 	private static final Random rand = new Random();
 	String[] minecraftLogo = new String[]{" *   * * *   * *** *** *** *** *** ***", " ** ** * **  * *   *   * * * * *    * ", " * * * * * * * **  *   **  *** **   * ", " *   * * *  ** *   *   * * * * *    * ", " *   * * *   * *** *** * * * * *    * "};
@@ -111,7 +113,7 @@ public class GuiMainMenu extends GuiScreen {
 		GL11.glScalef(var5, var5, var5);
 		this.drawCenteredString(this.fontRenderer, this.splashText, 0, -8, 16776960);
 		GL11.glPopMatrix();
-		this.drawString(this.fontRenderer, "Minecraft Alpha 1.2.6-macohi", 2, 2, 5263440);
+		this.drawString(this.fontRenderer, MacohiVersion.version, 2, 2, 5263440);
 		String var6 = "Copyright Mojang Specifications. Do not distribute.";
 		this.drawString(this.fontRenderer, var6, this.width - this.fontRenderer.getStringWidth(var6) - 2, this.height - 10, 16777215);
 		super.drawScreen(var1, var2, var3);

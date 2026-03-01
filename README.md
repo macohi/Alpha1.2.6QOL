@@ -1,5 +1,8 @@
 Just some QOL stuff I add to 1.2.6 cause I can lol
 
-# Changes
+# how to use
 
-- The version texts and strings are now "Minecraft Alpha 1.2.6-machoi"
+Download the build from the releases tab and in multiMC make sure youre using alpha 1.2.6, and then edit the instance, Go to version.
+
+and then click "Add to minecraft.jar" and select the build
+![tutorial](tutorial.png)

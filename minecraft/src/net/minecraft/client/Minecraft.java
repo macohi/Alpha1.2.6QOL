@@ -80,6 +80,8 @@ import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.glu.GLU;
 
+import macohi.MacohiVersion;
+
 public abstract class Minecraft implements Runnable {
 	public PlayerController field_6327_b;
 	private boolean a = false;
@@ -180,7 +182,7 @@ public abstract class Minecraft implements Runnable {
 			Display.setDisplayMode(new DisplayMode(this.displayWidth, this.displayHeight));
 		}
 
-		Display.setTitle("Minecraft Alpha 1.2.6-macohi");
+		Display.setTitle(MacohiVersion.version);
 
 		try {
 			Display.create();
