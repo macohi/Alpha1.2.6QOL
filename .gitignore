@@ -8,6 +8,7 @@ minecraft/bin/
 minecraft/game/
 minecraft/md5/
 minecraft/reobf/
+minecraft/output/
 minecraft/source/
 minecraft_server/
 patches/
