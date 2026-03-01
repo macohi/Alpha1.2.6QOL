@@ -13,8 +13,7 @@ public class BlockFadeTorch extends BlockTorch {
 
 		this.torchActive = torchActive;
 
-		// 60s(?)
-			tickIntegerStartVal = 1200 * (tickRate() * 20);
+		tickIntegerStartVal = 600 * (tickRate() * 20);
 
 		if (!torchActive)
 			tickInteger = 0;
@@ -25,12 +24,12 @@ public class BlockFadeTorch extends BlockTorch {
 	}
 
 	public boolean blockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5) {
-		if (var5.inventory.getCurrentItem() == null) return false;
+		if (var5.inventory.getCurrentItem() == null)
+			return false;
 
 		if (torchActive)
 			if (var5.inventory.getCurrentItem().itemID == Item.stick.shiftedIndex) {
-				// +8s(?)
-				tickInteger += 480 * (tickRate() * 20);
+				tickInteger += 240 * (tickRate() * 20);
 				var5.inventory.consumeInventoryItem(var5.inventory.getCurrentItem().itemID);
 
 				randomDisplayTick(var1, var2, var3, var4, null, true);
