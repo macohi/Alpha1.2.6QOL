@@ -17,6 +17,8 @@ public class BlockFadeTorch extends BlockTorch {
 			tickInteger = 1200 * (tickRate() / 20);
 		else
 			tickInteger = 0;
+
+		System.out.println(tickInteger);
 	}
 
 	public boolean blockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5) {
@@ -41,6 +43,13 @@ public class BlockFadeTorch extends BlockTorch {
 
 		if (tickInteger < 0)
 			tickInteger = 0;
+
+		if (torchActive) {
+			this.blockIndexInTexture = Block.fadeTorchActive.blockIndexInTexture;
+
+			if (tickInteger >= 1000)
+				this.blockIndexInTexture = Block.torchWood.blockIndexInTexture;
+		}
 	}
 
 	public int tickRate() {
