@@ -6,6 +6,7 @@ public class BlockFadeTorch extends BlockTorch {
 	private boolean torchActive = false;
 
 	public Integer tickInteger;
+	public Integer tickIntegerStartVal;
 
 	protected BlockFadeTorch(int var1, int var2, boolean torchActive) {
 		super(var1, var2);
@@ -13,10 +14,12 @@ public class BlockFadeTorch extends BlockTorch {
 		this.torchActive = torchActive;
 
 		// 60s(?)
-		if (torchActive)
-			tickInteger = 1200 * (tickRate() * 20);
-		else
+			tickIntegerStartVal = 1200 * (tickRate() * 20);
+
+		if (!torchActive)
 			tickInteger = 0;
+		else
+			tickInteger = tickIntegerStartVal;
 
 		System.out.println(tickInteger);
 	}
@@ -48,7 +51,7 @@ public class BlockFadeTorch extends BlockTorch {
 		if (torchActive) {
 			this.blockIndexInTexture = Block.fadeTorchActive.blockIndexInTexture;
 
-			if (tickInteger >= 1000)
+			if (tickInteger > tickIntegerStartVal / 2)
 				this.blockIndexInTexture = Block.torchWood.blockIndexInTexture;
 		}
 	}
