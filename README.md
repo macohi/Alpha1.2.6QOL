@@ -1,0 +1,1 @@
+Just some QOL stuff I add to 1.2.6 cause I can lol
