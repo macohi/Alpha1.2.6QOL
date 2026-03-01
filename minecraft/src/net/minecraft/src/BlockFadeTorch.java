@@ -20,7 +20,7 @@ public class BlockFadeTorch extends BlockTorch {
 		else
 			tickInteger = tickIntegerStartVal;
 
-		System.out.println(tickInteger);
+		System.out.println("tickInteger: " + tickInteger);
 	}
 
 	public boolean blockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5) {
