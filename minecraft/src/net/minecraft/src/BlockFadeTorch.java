@@ -69,6 +69,11 @@ public class BlockFadeTorch extends BlockTorch {
 		return Block.fadeTorchIdle.blockID;
 	}
 
+	public void randomDisplayTick(World var1, int var2, int var3, int var4, Random var5) {
+		if (torchActive)
+			super.randomDisplayTick(var1, var2, var3, var4, var5);
+	}
+
 	public void randomDisplayTick(World var1, int var2, int var3, int var4, Random var5, boolean force) {
 		if (torchActive || force)
 			super.randomDisplayTick(var1, var2, var3, var4, var5);
