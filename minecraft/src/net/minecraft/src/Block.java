@@ -73,7 +73,7 @@ public class Block {
 	public static final Block torchWood = (new BlockTorch(50, 80)).setHardness(0.0F).setLightValue(15.0F / 16.0F).setStepSound(soundWoodFootstep);
 	
 	public static final Block fadeTorchActive = (new BlockFadeTorch(92, 113, true)).setHardness(0.0F).setLightValue(10.0F / 16.0F).setStepSound(soundWoodFootstep);
-	public static final Block fadeTorchIdle = (new BlockFadeTorch(93, 114, false)).setHardness(0.0F).setLightValue(10.0F / 16.0F).setStepSound(soundWoodFootstep);
+	public static final Block fadeTorchIdle = (new BlockFadeTorch(93, 114, false)).setHardness(0.0F).setStepSound(soundWoodFootstep);
 	
 	public static final BlockFire fire = (BlockFire)((BlockFire)(new BlockFire(51, 31)).setHardness(0.0F).setLightValue(1.0F).setStepSound(soundWoodFootstep));
 	public static final Block mobSpawner = (new BlockMobSpawner(52, 65)).setHardness(5.0F).setStepSound(soundMetalFootstep);
